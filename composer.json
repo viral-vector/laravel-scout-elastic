@@ -9,7 +9,7 @@
         "laravel/scout": "^3.0",
         "elasticsearch/elasticsearch": "^5.0"
     },
-     "require-dev": {
+    "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~5.0"
@@ -26,6 +26,13 @@
     },
     "suggest": {
         "elasticsearch/elasticsearch": "Required to use the Elasticsearch engine (^5.0)."
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ScoutEngines\\Elasticsearch\\ElasticsearchProvider"
+            ]
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
