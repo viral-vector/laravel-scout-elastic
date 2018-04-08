@@ -3,12 +3,12 @@
 namespace ViralVector\LaravelScoutElastic;
 
 use Laravel\Scout\EngineManager;
-use Illuminate\Support\ServiceProvider as BaseProvider;
+use Illuminate\Support\ServiceProvider;
 use Elasticsearch\ClientBuilder as ElasticBuilder;
 use ViralVector\LaravelScoutElastic\Console\ElasticIndicesCommand;
 use ViralVector\LaravelScoutElastic\Console\ElasticMakeIndicesCommand;
 
-class ServiceProvider extends BaseProvider
+class LaravelScoutElasticServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.

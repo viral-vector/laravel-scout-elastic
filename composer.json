@@ -21,16 +21,16 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "ViralVector\\LaravelScoutElastic\\Test\\": "tests"
+            "ViralVector\\LaravelScoutElastic\\Tests\\": "tests/"
         }
     },
     "suggest": {
-        "elasticsearch/elasticsearch": "Required to use the Elasticsearch engine (^5.0)."
+        "elasticsearch/elasticsearch": "Required to use the Elasticsearch engine (^6.0)."
     },
     "extra": {
         "laravel": {
             "providers": [
-                "ViralVector\\LaravelScoutElastic\\ServiceProvider"
+                "ViralVector\\LaravelScoutElastic\\LaravelScoutElasticServiceProvider"
             ]
         }
     },
