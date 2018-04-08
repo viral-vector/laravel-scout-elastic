@@ -1,6 +1,6 @@
 <?php
 
-namespace ScoutEngines\Elasticsearch;
+namespace ViralVector\LaravelScoutElastic;
 
 use Laravel\Scout\EngineManager;
 use Illuminate\Support\ServiceProvider;
