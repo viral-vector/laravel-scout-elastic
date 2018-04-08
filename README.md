@@ -29,14 +29,14 @@ You must add the Scout service provider and the package service provider in your
     ...
     Laravel\Scout\ScoutServiceProvider::class,
     ...
-    ViralVector\LaravelScoutElastic\ElasticsearchProvider::class,
+    ViralVector\LaravelScoutElastic\LaravelScoutElasticServiceProvider::class,
 ],
 ```
 
 Then you should publish the Elasticsearch configuration using the `vendor:publish` Artisan command.
 
 ```
-php artisan vendor:publish --provider="ViralVector\LaravelScoutElastic\ElasticsearchProvider"
+php artisan vendor:publish --provider="ViralVector\LaravelScoutElastic\LaravelScoutElasticServiceProvider"
 ```
 
 ### Setting up Elasticsearch configuration
