@@ -1,6 +1,6 @@
 <?php
 
-namespace ScoutEngines\Elasticsearch\Console;
+namespace ViralVector\LaravelScoutElastic\Console;
 
 use Elasticsearch\ClientBuilder;
 use Illuminate\Console\Command;

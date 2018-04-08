@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Eloquent\Collection;
-use ScoutEngines\Elasticsearch\ElasticsearchEngine;
+use ViralVector\LaravelScoutElastic\ElasticsearchEngine;
 
 class ElasticsearchEngineTest extends PHPUnit_Framework_TestCase
 {

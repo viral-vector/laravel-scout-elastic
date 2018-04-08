@@ -5,8 +5,8 @@ namespace ScoutEngines\Elasticsearch;
 use Laravel\Scout\EngineManager;
 use Illuminate\Support\ServiceProvider;
 use Elasticsearch\ClientBuilder as ElasticBuilder;
-use ScoutEngines\Elasticsearch\Console\ElasticIndicesCommand;
-use ScoutEngines\Elasticsearch\Console\ElasticMakeIndicesCommand;
+use ViralVector\LaravelScoutElastic\Console\ElasticIndicesCommand;
+use ViralVector\LaravelScoutElastic\Console\ElasticMakeIndicesCommand;
 
 class ElasticsearchProvider extends ServiceProvider
 {

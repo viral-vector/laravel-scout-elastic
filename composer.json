@@ -1,7 +1,7 @@
 {
-    "name": "thomasjsn/laravel-scout-elastic",
+    "name": "viral-vector/laravel-scout-elastic",
     "description": "Elastic Driver for Laravel Scout",
-    "homepage": "https://github.com/thomasjsn/laravel-scout-elastic",
+    "homepage": "https://github.com/viral-vector/laravel-scout-elastic",
     "license": "MIT",
     "keywords": ["laravel", "scout", "elasticsearch", "elastic"],
     "require": {
@@ -16,12 +16,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ScoutEngines\\Elasticsearch\\": "src/"
+            "ViralVector\\LaravelScoutElastic\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ScoutEngines\\Elasticsearch\\Test\\": "tests"
+            "ViralVector\\LaravelScoutElastic\\Test\\": "tests"
         }
     },
     "suggest": {
@@ -30,7 +30,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ScoutEngines\\Elasticsearch\\ElasticsearchProvider"
+                "ViralVector\\LaravelScoutElastic\\ServiceProvider"
             ]
         }
     },

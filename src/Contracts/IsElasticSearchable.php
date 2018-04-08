@@ -1,6 +1,6 @@
 <?php
 
-namespace ScoutEngines\Elasticsearch\Contracts;
+namespace ViralVector\LaravelScoutElastic\Contracts;
 
 interface IsElasticSearchable
 {
