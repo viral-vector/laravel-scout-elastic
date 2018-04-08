@@ -8,7 +8,7 @@ use Elasticsearch\ClientBuilder as ElasticBuilder;
 use ViralVector\LaravelScoutElastic\Console\ElasticIndicesCommand;
 use ViralVector\LaravelScoutElastic\Console\ElasticMakeIndicesCommand;
 
-class ElasticsearchProvider extends ServiceProvider
+class ServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
