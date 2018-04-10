@@ -177,6 +177,16 @@ class ElasticsearchEngine extends Engine
                 $options['sorting']);
         }
 
+        // run customs callback
+        if ($builder->callback) {
+            return call_user_func(
+                $builder->callback,
+                $this->elastic,
+                $builder->query,
+                $params
+            );
+        }
+
         return $this->elastic->search($params);
     }
 
@@ -189,6 +199,10 @@ class ElasticsearchEngine extends Engine
     protected function filters(Builder $builder)
     {
         return collect($builder->wheres)->map(function ($value, $key) {
+            if (is_array($value)) {
+                return ['terms' => [$key => $value]];
+            }
+
             return ['term' => [$key => $value]];
         })->values()->all();
     }
@@ -241,7 +255,7 @@ class ElasticsearchEngine extends Engine
             if (isset($models[$key])) {
                 return $models[$key];
             }
-        })->filter();
+        })->filter()->values();
     }
 
     /**
