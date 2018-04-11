@@ -153,7 +153,7 @@ class ElasticsearchEngine extends Engine
                     ]
                 ],
                 'sort' => [
-                    '_score'
+                    '_score' => [ 'order' => 'desc']
                 ],
                 'track_scores' => true,
             ]
