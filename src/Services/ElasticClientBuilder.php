@@ -14,7 +14,7 @@ class ElasticClientBuilder
         $client = ClientBuilder::create()
             ->setHosts(config('elasticsearch.hosts'));
 
-        if(config('elasticsearch.ssl')){
+        if(count(array_filter(config('elasticsearch.ssl'))) > 0){
             $client->setSSLVerification(config('elasticsearch.ssl'));
         }
 
