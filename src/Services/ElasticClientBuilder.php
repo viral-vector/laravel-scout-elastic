@@ -11,7 +11,7 @@ class ElasticClientBuilder
      */
     public static function build()
     {
-        $client = ElasticBuilder::create()
+        $client = ClientBuilder::create()
             ->setHosts(config('elasticsearch.hosts'));
 
         if(config('elasticsearch.ssl')){
