@@ -2,8 +2,8 @@
 
 namespace ViralVector\LaravelScoutElastic\Console;
 
-use Elasticsearch\ClientBuilder;
 use Illuminate\Console\Command;
+use ViralVector\LaravelScoutElastic\Services\ElasticClientBuilder;
 
 class ElasticMakeIndicesCommand extends Command
 {
@@ -38,9 +38,7 @@ class ElasticMakeIndicesCommand extends Command
      */
     public function handle()
     {
-        $host = config('elasticsearch.hosts');
-
-        $client = ClientBuilder::create()->setHosts($host)->build();
+        $client = ElasticClientBuilder::build();
 
         $indices = ! is_null($this->argument('index')) ?
             [$this->argument('index')] : array_keys(config('elasticsearch.indices'));

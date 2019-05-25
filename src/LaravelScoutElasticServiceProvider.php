@@ -4,9 +4,9 @@ namespace ViralVector\LaravelScoutElastic;
 
 use Laravel\Scout\EngineManager;
 use Illuminate\Support\ServiceProvider;
-use Elasticsearch\ClientBuilder as ElasticBuilder;
 use ViralVector\LaravelScoutElastic\Console\ElasticIndicesCommand;
 use ViralVector\LaravelScoutElastic\Console\ElasticMakeIndicesCommand;
+use ViralVector\LaravelScoutElastic\Services\ElasticClientBuilder;
 
 class LaravelScoutElasticServiceProvider extends ServiceProvider
 {
@@ -16,9 +16,7 @@ class LaravelScoutElasticServiceProvider extends ServiceProvider
     public function boot()
     {
         app(EngineManager::class)->extend('elasticsearch', function($app) {
-            return new ElasticsearchEngine(ElasticBuilder::create()
-                ->setHosts(config('elasticsearch.hosts'))
-                ->build(),
+            return new ElasticsearchEngine(ElasticClientBuilder::build(),
                 config('elasticsearch.queries')
             );
         });
