@@ -115,9 +115,11 @@ class ElasticsearchEngine extends Engine
             'sorting' => $this->sorting($builder),
             'from' => (($page * $perPage) - $perPage),
             'size' => $perPage,
+            'nbPages' => 0
         ]);
 
-        $result['nbPages'] = $result['hits']['total']/$perPage;
+        if(isset($result['hits']['total']))
+            $result['nbPages'] = floor($result['hits']['total']['value'] / $perPage);
 
         return $result;
     }
@@ -239,7 +241,7 @@ class ElasticsearchEngine extends Engine
      */
     public function map(Builder $builder, $results, $model)
     {
-        if ($results['hits']['total'] === 0) {
+        if ($results['hits']['total']['value'] === 0) {
             return $model->newCollection();
         }
 
@@ -261,7 +263,7 @@ class ElasticsearchEngine extends Engine
      */
     public function getTotalCount($results)
     {
-        return $results['hits']['total'];
+        return $results['hits']['total']['value'];
     }
 
     /**
