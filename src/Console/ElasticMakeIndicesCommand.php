@@ -83,6 +83,7 @@ class ElasticMakeIndicesCommand extends Command
                 $client->indices()->putMapping([
                     'index' => $index,
                     'type' => $type,
+                    'include_type_name' => true,
                     'body' => [
                         'properties' => $mapping
                     ]
